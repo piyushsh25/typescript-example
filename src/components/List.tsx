@@ -1,15 +1,8 @@
 import React from "react";
-type PeopleStatePropls = {
-  people: {
-    name: string;
-    url: string;
-    age: number;
-    note?: string;
-  }[];
-};
+import { PeopleState as PeopleStatePropls } from "../App";
 
 export const List: React.FC<PeopleStatePropls> = ({ people }) => {
-  const renderList = ():JSX.Element[] => {
+  const renderList = (): JSX.Element[] => {
     return people.map((person) => {
       return (
         <div style={{ border: "2px solid red" }}>
@@ -25,7 +18,5 @@ export const List: React.FC<PeopleStatePropls> = ({ people }) => {
       );
     });
   };
-  return <>
-  {renderList()}
-  </>;
+  return <>{renderList()}</>;
 };
